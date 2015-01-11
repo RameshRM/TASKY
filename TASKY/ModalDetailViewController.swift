@@ -9,15 +9,41 @@
 import UIKit
 
 class ModalDetailViewController: DetailViewController {
-
-    @IBAction func onSaved(sender: AnyObject) {
-        self.dismissView();
+    
+    var saveBarButton: UIBarItem!{
+        willSet(newData){
+            
+        }
+        didSet{
+        }
     }
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad();
+        if(self.saveBarButton != nil){
+            self.saveBarButton.enabled = false;
+        }
+    }
+    
+    
+    @IBAction func onSaved(sender: AnyObject) {
+        self.dismissView(self.dataContext);
+    }
+    
     
     @IBAction func onCancelled(sender: AnyObject) {
         self.dismissView();
     }
     
-   
-
+    
+    override func onDirtyDataContext()->Void{
+        if(self.saveBarButton != nil){
+            self.saveBarButton.enabled = self.dataContext.isDirty;
+        }
+    }
+    
+    
+    
+    
 }

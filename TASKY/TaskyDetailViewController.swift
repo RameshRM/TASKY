@@ -8,42 +8,77 @@
 
 import UIKit
 
-class TaskyDetailViewController: DetailViewController {
-
- 
+class TaskyDetailViewController: DetailViewController,UITableViewDelegate, UITableViewDataSource {
+    
+    
+    @IBOutlet weak var taskyComments: UITableView!
     @IBOutlet weak var taskyTitle: UILabel!
     @IBOutlet weak var taskyDescription: UILabel!
-
+    var taskyModel:TaskyModel!;
+    var comments:[TaskyComments] = [TaskyComments]();
+    
+    @IBAction func onStatusChanged(sender: AnyObject) {
+        println(sender.selectedSegmentIndex);
+        self.taskyModel.taskyStatus = sender.selectedSegmentIndex;
+    }
+    
+    @IBOutlet weak var save: UIButton!
+    @IBOutlet weak var taskyStatus: UISegmentedControl!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        super.saveButton = self.save;
+        self.onMessage(self.detailViewCompleteKey, callback: { (result) -> Void in
+            var crud:TaskyComments = result as TaskyComments;
+            self.setCommentsDataCtx(crud);
+        });
+        self.taskyComments.delegate = self;
+        self.taskyComments.dataSource = self;
     }
     
     override func viewDidAppear(animated: Bool) {
-     
+        
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
+    
     /*
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // Get the new view controller using segue.destinationViewController.
+    // Pass the selected object to the new view controller.
     }
     */
-
+    
     override func onDataContextSet() {
         super.onDataContextSet();
-        var taskyModel:TaskyModel = self.dataContext as TaskyModel;
+        taskyModel = self.dataContext as TaskyModel;
         self.taskyDescription.text =  taskyModel.taskyDescription;
         self.taskyTitle.text = taskyModel.taskyTitle;
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        println(self.comments.count);
+        return self.comments.count;
+    }
+    
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+          var cell = self.taskyComments.dequeueReusableCellWithIdentifier("taskyComments") as TaskyCommentTableViewCell;
+        var comment = self.comments[indexPath.row];
+        cell.setComments(comment.comment!);
+        println(cell);
+        return cell;
+    }
+    
+    func setCommentsDataCtx(comment: TaskyComments)->Void{
+        self.comments.append(comment);
+        self.taskyComments.reloadData();
     }
     
 }

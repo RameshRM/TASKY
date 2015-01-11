@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		9055C1D41A538E11003613EC /* CommentsDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9055C1D31A538E11003613EC /* CommentsDetail.swift */; };
 		9055C1D61A539141003613EC /* ModalDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9055C1D51A539141003613EC /* ModalDetailViewController.swift */; };
+		90A197F81A5F8908005753AF /* ChangeObserverProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A197F71A5F8908005753AF /* ChangeObserverProtocol.swift */; };
+		90A197FF1A5F8FB6005753AF /* CRUDBaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A197FE1A5F8FB6005753AF /* CRUDBaseModel.swift */; };
+		90A198011A624846005753AF /* TaskyCommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A198001A624846005753AF /* TaskyCommentTableViewCell.swift */; };
 		90BBBE1D1A4A403100C7B877 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BBBE1C1A4A403100C7B877 /* AppDelegate.swift */; };
 		90BBBE201A4A403100C7B877 /* TASKY.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 90BBBE1E1A4A403100C7B877 /* TASKY.xcdatamodeld */; };
 		90BBBE221A4A403100C7B877 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BBBE211A4A403100C7B877 /* ViewController.swift */; };
@@ -53,6 +56,9 @@
 /* Begin PBXFileReference section */
 		9055C1D31A538E11003613EC /* CommentsDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentsDetail.swift; sourceTree = "<group>"; };
 		9055C1D51A539141003613EC /* ModalDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalDetailViewController.swift; sourceTree = "<group>"; };
+		90A197F71A5F8908005753AF /* ChangeObserverProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeObserverProtocol.swift; sourceTree = "<group>"; };
+		90A197FE1A5F8FB6005753AF /* CRUDBaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CRUDBaseModel.swift; sourceTree = "<group>"; };
+		90A198001A624846005753AF /* TaskyCommentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskyCommentTableViewCell.swift; sourceTree = "<group>"; };
 		90BBBE171A4A403100C7B877 /* TASKY.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TASKY.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90BBBE1B1A4A403100C7B877 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		90BBBE1C1A4A403100C7B877 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -106,6 +112,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		90A197F61A5F88E9005753AF /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				90CDF9641A574A7C00826428 /* ListViewProtocol.swift */,
+				90BBBE691A51315500C7B877 /* DetailViewProtocol.swift */,
+				90A197F71A5F8908005753AF /* ChangeObserverProtocol.swift */,
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
 		90BBBE0E1A4A403100C7B877 = {
 			isa = PBXGroup;
 			children = (
@@ -127,6 +143,7 @@
 		90BBBE191A4A403100C7B877 /* TASKY */ = {
 			isa = PBXGroup;
 			children = (
+				90A197F61A5F88E9005753AF /* Protocols */,
 				90CDF9601A567C3400826428 /* df0_5285.jpg */,
 				90BBBE451A4A439E00C7B877 /* DataContext */,
 				90BBBE421A4A429F00C7B877 /* Controllers */,
@@ -188,6 +205,7 @@
 				90BBBE581A4A8F2100C7B877 /* BaseModel.swift */,
 				90BBBE5A1A4A903D00C7B877 /* TaskyUser.swift */,
 				90BBBE631A4B2CE900C7B877 /* TaskyPriorities.swift */,
+				90A197FE1A5F8FB6005753AF /* CRUDBaseModel.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -207,11 +225,9 @@
 				90BBBE5C1A4AF5EE00C7B877 /* TaskyViewController.swift */,
 				90BBBE651A50ECFD00C7B877 /* TaskyDetailViewController.swift */,
 				90BBBE671A512EB300C7B877 /* DetailViewController.swift */,
-				90BBBE691A51315500C7B877 /* DetailViewProtocol.swift */,
 				9055C1D31A538E11003613EC /* CommentsDetail.swift */,
 				9055C1D51A539141003613EC /* ModalDetailViewController.swift */,
 				90CDF9621A5749D200826428 /* ListViewController.swift */,
-				90CDF9641A574A7C00826428 /* ListViewProtocol.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -231,6 +247,7 @@
 			children = (
 				90BBBE5F1A4AF8FA00C7B877 /* TaskyItemTableViewCell.swift */,
 				90BBBE611A4B29E600C7B877 /* TaskyTimeLineViewCell.swift */,
+				90A198001A624846005753AF /* TaskyCommentTableViewCell.swift */,
 			);
 			name = TaskyList;
 			sourceTree = "<group>";
@@ -339,11 +356,13 @@
 				90CDF9651A574A7C00826428 /* ListViewProtocol.swift in Sources */,
 				90BBBE4D1A4A57ED00C7B877 /* TaskyModel.swift in Sources */,
 				9055C1D61A539141003613EC /* ModalDetailViewController.swift in Sources */,
+				90A198011A624846005753AF /* TaskyCommentTableViewCell.swift in Sources */,
 				90BBBE4F1A4A581B00C7B877 /* TimeLineModel.swift in Sources */,
 				90BBBE591A4A8F2100C7B877 /* BaseModel.swift in Sources */,
 				90BBBE601A4AF8FA00C7B877 /* TaskyItemTableViewCell.swift in Sources */,
 				9055C1D41A538E11003613EC /* CommentsDetail.swift in Sources */,
 				90BBBE661A50ECFD00C7B877 /* TaskyDetailViewController.swift in Sources */,
+				90A197FF1A5F8FB6005753AF /* CRUDBaseModel.swift in Sources */,
 				90BBBE6A1A51315500C7B877 /* DetailViewProtocol.swift in Sources */,
 				90CDF9631A5749D200826428 /* ListViewController.swift in Sources */,
 				90BBBE621A4B29E600C7B877 /* TaskyTimeLineViewCell.swift in Sources */,
@@ -351,6 +370,7 @@
 				90BBBE4B1A4A440200C7B877 /* DataContext.swift in Sources */,
 				90BBBE221A4A403100C7B877 /* ViewController.swift in Sources */,
 				90BBBE551A4A7A4000C7B877 /* TaskyComments.swift in Sources */,
+				90A197F81A5F8908005753AF /* ChangeObserverProtocol.swift in Sources */,
 				90BBBE491A4A43C900C7B877 /* DataConstants.swift in Sources */,
 				90BBBE201A4A403100C7B877 /* TASKY.xcdatamodeld in Sources */,
 				90BBBE1D1A4A403100C7B877 /* AppDelegate.swift in Sources */,

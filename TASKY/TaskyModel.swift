@@ -8,12 +8,20 @@
 
 import Foundation
 
-public class TaskyModel : BaseModel{
+public class TaskyModel : CRUDBaseModel {
     
     var taskyID: Int?;
     var taskyTitle: NSString?;
     var taskyDescription: NSString?;
-    var taskyStatus: Int?;
+    
+    var taskyStatus: Int?{
+        willSet(newData){
+        }
+        didSet{
+            observeChange("taskyStatus",oldData:oldValue!,newData:taskyStatus!);
+        }
+    };
+
     var timeLine: TimeLineModel?;
     var belongsTo: TaskyUser?;
     var taskyPriority : Int?;
@@ -25,6 +33,7 @@ public class TaskyModel : BaseModel{
         self.taskyPriority = TaskyPriorities.Normal;
         super.init();
     }
+    
 
     
     class func mockTasks()->[TaskyModel]{
@@ -47,35 +56,35 @@ public class TaskyModel : BaseModel{
         tasky =  TaskyModel(title: "Start Some Task", description: "Implement Native App for Tasky", status: TaskyStatusCodes.Active);
         tasky.timeLine = timeLine;
         tasks.append(tasky);
-
-        tasky =  TaskyModel(title: "Start Some Task", description: "Implement Native App for Tasky", status: TaskyStatusCodes.Active);
-        tasky.timeLine = timeLine;
-        tasks.append(tasky);
-
         
         tasky =  TaskyModel(title: "Start Some Task", description: "Implement Native App for Tasky", status: TaskyStatusCodes.Active);
         tasky.timeLine = timeLine;
         tasks.append(tasky);
-
-        tasky =  TaskyModel(title: "Start Some Task", description: "Implement Native App for Tasky", status: TaskyStatusCodes.Active);
-        tasky.timeLine = timeLine;
-        tasks.append(tasky);
-
-        tasky =  TaskyModel(title: "Start Some Task", description: "Implement Native App for Tasky", status: TaskyStatusCodes.Active);
-        tasky.timeLine = timeLine;
-        tasks.append(tasky);
-
-        
-        tasky =  TaskyModel(title: "Start Some Task", description: "Implement Native App for Tasky", status: TaskyStatusCodes.Active);
-        tasky.timeLine = timeLine;
-        tasks.append(tasky);
-
         
         
         tasky =  TaskyModel(title: "Start Some Task", description: "Implement Native App for Tasky", status: TaskyStatusCodes.Active);
         tasky.timeLine = timeLine;
         tasks.append(tasky);
-
+        
+        tasky =  TaskyModel(title: "Start Some Task", description: "Implement Native App for Tasky", status: TaskyStatusCodes.Active);
+        tasky.timeLine = timeLine;
+        tasks.append(tasky);
+        
+        tasky =  TaskyModel(title: "Start Some Task", description: "Implement Native App for Tasky", status: TaskyStatusCodes.Active);
+        tasky.timeLine = timeLine;
+        tasks.append(tasky);
+        
+        
+        tasky =  TaskyModel(title: "Start Some Task", description: "Implement Native App for Tasky", status: TaskyStatusCodes.Active);
+        tasky.timeLine = timeLine;
+        tasks.append(tasky);
+        
+        
+        
+        tasky =  TaskyModel(title: "Start Some Task", description: "Implement Native App for Tasky", status: TaskyStatusCodes.Active);
+        tasky.timeLine = timeLine;
+        tasks.append(tasky);
+        
         return tasks;
     }
     
@@ -86,5 +95,5 @@ public class TaskyModel : BaseModel{
         var mutable = NSMutableArray(array: mocks);
         return mutable.filteredArrayUsingPredicate(filter!);
     }
-
+    
 }

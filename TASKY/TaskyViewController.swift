@@ -18,7 +18,7 @@ class TaskyViewController: ListViewController, UISearchBarDelegate, UISearchDisp
     
     
     override func viewDidLoad() {
-        super.viewDidLoad()
+        super.viewDidLoad();
         self.tableView = taskyList;
         self.prepareTableView("taskyItem");
         self.dataContext = taskies;
@@ -80,6 +80,10 @@ class TaskyViewController: ListViewController, UISearchBarDelegate, UISearchDisp
     func searchBarCancelButtonClicked(searchBar: UISearchBar){
         searchBar.text = "";
         searchBar.resignFirstResponder();
+        var result = TaskyModel.mockTasks();
+        self.dataContext = result;
+        self.tableView.reloadData();
+        
     }
     
     func onTapped(){

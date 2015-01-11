@@ -8,9 +8,14 @@
 
 import Foundation
 
-public class TaskyComments : BaseModel{
+public class TaskyComments : CRUDBaseModel{
     
     var taskyID: Int?;
-    var comment: NSString?;
-    
+    var comment: NSString?{
+        willSet(newData){
+        }
+        didSet{
+            self.observeChange("comment", oldData: "old", newData: comment!)
+        }
+    };
 }
