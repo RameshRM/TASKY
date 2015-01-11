@@ -301,13 +301,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                 <items>
                                     <navigationItem id="fQU-PD-x2e">
-                                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="wR2-52-W2R">
-                                            <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="cancel" id="wR2-52-W2R">
+                                            <color key="tintColor" red="0.80000000000000004" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
                                                 <action selector="onCancelled:" destination="AH9-PG-2tv" id="9pq-XT-RHI"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Save" id="LRS-CI-ZxB">
+                                        <barButtonItem key="rightBarButtonItem" enabled="NO" style="plain" systemItem="done" id="LRS-CI-ZxB">
                                             <connections>
                                                 <action selector="onSaved:" destination="AH9-PG-2tv" id="BMN-8E-Kl7"/>
                                             </connections>
