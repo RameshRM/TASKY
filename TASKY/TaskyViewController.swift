@@ -83,7 +83,6 @@ class TaskyViewController: ListViewController, UISearchBarDelegate, UISearchDisp
         var result = TaskyModel.mockTasks();
         self.dataContext = result;
         self.tableView.reloadData();
-        
     }
     
     func onTapped(){

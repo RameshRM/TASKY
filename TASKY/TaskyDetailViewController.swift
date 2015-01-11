@@ -14,11 +14,11 @@ class TaskyDetailViewController: DetailViewController,UITableViewDelegate, UITab
     @IBOutlet weak var taskyComments: UITableView!
     @IBOutlet weak var taskyTitle: UILabel!
     @IBOutlet weak var taskyDescription: UILabel!
+    var reversedComments:[TaskyComments]=[TaskyComments]();
     var taskyModel:TaskyModel!;
     var comments:[TaskyComments] = [TaskyComments]();
     
     @IBAction func onStatusChanged(sender: AnyObject) {
-        println(sender.selectedSegmentIndex);
         self.taskyModel.taskyStatus = sender.selectedSegmentIndex;
     }
     
@@ -26,7 +26,6 @@ class TaskyDetailViewController: DetailViewController,UITableViewDelegate, UITab
     @IBOutlet weak var taskyStatus: UISegmentedControl!
     override func viewDidLoad() {
         super.viewDidLoad();
-        println(self.dataContext);
         super.saveButton = self.save;
         self.onMessage(self.detailViewCompleteKey, callback: { (result) -> Void in
             var crud:TaskyComments = result as TaskyComments;
@@ -70,20 +69,22 @@ class TaskyDetailViewController: DetailViewController,UITableViewDelegate, UITab
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = self.taskyComments.dequeueReusableCellWithIdentifier("taskyComments") as TaskyCommentTableViewCell;
-        var comment = self.taskyModel.comments[indexPath.row];
+        var comment = reversedComments[indexPath.row];
         cell.setComments(comment.comment!);
         return cell;
     }
     
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat{
-        return 65;
+        return 40;
     }
     
     func setCommentsDataCtx(comment: TaskyComments)->Void{
         self.taskyModel.comments.append(comment);
+        reversedComments = self.taskyModel.comments.reverse();
+        let indexPath = NSIndexPath(forRow: reversedComments.count-1, inSection: 0);
         self.taskyComments.reloadData();
-
+        self.taskyComments.reloadRowsAtIndexPaths(	[indexPath], withRowAnimation: .Automatic);
     }
     
 }
