@@ -57,11 +57,9 @@ class TaskyViewController: ListViewController, UISearchBarDelegate, UISearchDisp
         self.tableView.reloadData();
     }
     
-    override func onCellForRowIndexSet(tableCell: UITableViewCell, rowData: AnyObject, indexPath: NSIndexPath) -> Void{
+    override func onCellForRowIndexSet(tableCell: UITableViewCell, rowData: AnyObject, indexPath: NSIndexPath, canUserInteract: Bool) -> Void{
         var cell = tableCell as TaskyItemTableViewCell;
         var taskyModel = rowData as TaskyModel;
-        cell.taskyItemTitle.text  = taskyModel.taskyTitle;
-        cell.taskyItemTitle.text  = taskyModel.taskyTitle;
         cell.taskyItemStatus.text  = "Yesterday";
         if(indexPath.row == 2){
         cell.taskyItemStatus.text  = "Today";
@@ -75,6 +73,7 @@ class TaskyViewController: ListViewController, UISearchBarDelegate, UISearchDisp
         }
         
         cell.taskyPriority.text = TaskyPriorities.priorityName(taskyModel.taskyPriority!);
+        cell.dataBind(taskyModel, isEnabled: canUserInteract);
     }
     
     func searchBarCancelButtonClicked(searchBar: UISearchBar){
@@ -82,15 +81,23 @@ class TaskyViewController: ListViewController, UISearchBarDelegate, UISearchDisp
         searchBar.resignFirstResponder();
         var result = TaskyModel.mockTasks();
         self.dataContext = result;
+        self.taskyList.scrollEnabled=true;
+                self.taskyList.userInteractionEnabled = true;
+        isSearchOn = false;
         self.tableView.reloadData();
+        self.navigationController?.setNavigationBarHidden(false, animated: true);
     }
     
     func onTapped(){
-        println("Tapped");
     }
     
     func searchBarTextDidBeginEditing(searchBar: UISearchBar){
         searchBar.setShowsCancelButton(true, animated: true);
+        self.navigationController?.setNavigationBarHidden(true, animated: true);
+        isSearchOn = true;
+        self.taskyList.userInteractionEnabled = false;
+        self.taskyList.scrollEnabled=false;
+        self.taskyList.reloadData();
     }
     
     func searchBarTextDidEndEditing(searchBar: UISearchBar){

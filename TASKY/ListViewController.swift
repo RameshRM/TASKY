@@ -9,9 +9,8 @@
 import UIKit
 
 class ListViewController: MainViewController,UITableViewDelegate, UITableViewDataSource, ListViewProtocol {
-    
+    var isSearchOn:Bool = false;
     var tableView: UITableView!
-    
     var itemCellIdentifier : NSString = "";
     var dataContext: [AnyObject] = [] {
         willSet(newData){
@@ -30,7 +29,7 @@ class ListViewController: MainViewController,UITableViewDelegate, UITableViewDat
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell:UITableViewCell = UITableViewCell();
         cell = self.tableView.dequeueReusableCellWithIdentifier(itemCellIdentifier) as UITableViewCell;
-        self.onCellForRowIndexSet(cell, rowData: dataContext[indexPath.row], indexPath: indexPath);
+        self.onCellForRowIndexSet(cell, rowData: dataContext[indexPath.row], indexPath: indexPath, canUserInteract: isSearchOn);
         return cell;
     }
     
@@ -60,6 +59,12 @@ class ListViewController: MainViewController,UITableViewDelegate, UITableViewDat
     /** Empty Stub**/
     /** Derived Class Should Implement **/
     func onCellForRowIndexSet(tableCell: UITableViewCell, rowData: AnyObject, indexPath: NSIndexPath) -> Void{
+        
+        
+    }
+    
+    func onCellForRowIndexSet(tableCell: UITableViewCell, rowData: AnyObject,
+        indexPath: NSIndexPath, canUserInteract: Bool) -> Void{
         
         
     }

@@ -28,7 +28,7 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JBP-nh-9lS" id="blp-j6-zMr">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="adfafafa adfafafd234 sd fsfafa" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AxP-8v-eN9">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="adfafafa adfafafd234 sd fsfafa" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AxP-8v-eN9">
                                                     <rect key="frame" x="5" y="22" width="217.5" height="19.5"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -37,7 +37,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZpQ-Qj-Bkt">
                                                     <rect key="frame" x="6" y="49" width="28.5" height="13.5"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="11"/>
-                                                    <color key="textColor" red="1" green="0.24418891731100001" blue="0.19302129473784524" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.49803921580314636" green="0.49803921580314636" blue="0.49803921580314636" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rK7-id-gi1">
@@ -94,6 +94,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="TASKIES" id="Trk-cV-cWR"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="filterSearch" destination="J5D-cf-Smm" id="jGk-sM-pFe"/>
                         <outlet property="taskyList" destination="0bD-Uf-Chc" id="gbr-uM-DDb"/>
@@ -211,7 +212,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NORMAL" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iYP-EK-YUe">
                                 <rect key="frame" x="546" y="76" width="44" height="12"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
-                                <color key="textColor" red="1" green="0.47652311668616765" blue="0.10963054182042298" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.40000000596046448" green="0.40000000596046448" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qMn-3J-YXs">
@@ -257,6 +258,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="bde-RL-WPI"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="save" destination="mw7-7H-IgO" id="s45-US-c12"/>
                         <outlet property="taskyComments" destination="nn3-yj-c7o" id="uWG-U3-0P2"/>
@@ -289,7 +291,7 @@
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Lvm-ac-AiC">
                                 <rect key="frame" x="20" y="84" width="560" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                 <connections>
                                     <action selector="textOnChange:" destination="AH9-PG-2tv" eventType="editingChanged" id="JtH-Fe-flI"/>

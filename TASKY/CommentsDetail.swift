@@ -19,6 +19,7 @@ class CommentsDetail: ModalDetailViewController {
         super.saveBarButton = self.save;
         self.dataContext = taskyComment;
         super.viewDidLoad()
+        self.comments.becomeFirstResponder();
     }
 
     @IBAction func textOnChange(sender: AnyObject) {

@@ -38,7 +38,6 @@
 		90BBBE661A50ECFD00C7B877 /* TaskyDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BBBE651A50ECFD00C7B877 /* TaskyDetailViewController.swift */; };
 		90BBBE681A512EB300C7B877 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BBBE671A512EB300C7B877 /* DetailViewController.swift */; };
 		90BBBE6A1A51315500C7B877 /* DetailViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BBBE691A51315500C7B877 /* DetailViewProtocol.swift */; };
-		90CDF9611A567C3400826428 /* df0_5285.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 90CDF9601A567C3400826428 /* df0_5285.jpg */; };
 		90CDF9631A5749D200826428 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CDF9621A5749D200826428 /* ListViewController.swift */; };
 		90CDF9651A574A7C00826428 /* ListViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90CDF9641A574A7C00826428 /* ListViewProtocol.swift */; };
 /* End PBXBuildFile section */
@@ -89,7 +88,6 @@
 		90BBBE651A50ECFD00C7B877 /* TaskyDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskyDetailViewController.swift; sourceTree = "<group>"; };
 		90BBBE671A512EB300C7B877 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		90BBBE691A51315500C7B877 /* DetailViewProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewProtocol.swift; sourceTree = "<group>"; };
-		90CDF9601A567C3400826428 /* df0_5285.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = df0_5285.jpg; sourceTree = "<group>"; };
 		90CDF9621A5749D200826428 /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		90CDF9641A574A7C00826428 /* ListViewProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -144,7 +142,6 @@
 			isa = PBXGroup;
 			children = (
 				90A197F61A5F88E9005753AF /* Protocols */,
-				90CDF9601A567C3400826428 /* df0_5285.jpg */,
 				90BBBE451A4A439E00C7B877 /* DataContext */,
 				90BBBE421A4A429F00C7B877 /* Controllers */,
 				90BBBE411A4A429700C7B877 /* Views */,
@@ -301,6 +298,7 @@
 				TargetAttributes = {
 					90BBBE161A4A403100C7B877 = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = G8LJJF8FB4;
 					};
 					90BBBE2E1A4A403100C7B877 = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -332,7 +330,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				90CDF9611A567C3400826428 /* df0_5285.jpg in Resources */,
 				90BBBE251A4A403100C7B877 /* Main.storyboard in Resources */,
 				90BBBE2A1A4A403100C7B877 /* LaunchScreen.xib in Resources */,
 				90BBBE271A4A403100C7B877 /* Images.xcassets in Resources */,
