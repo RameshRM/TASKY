@@ -25,7 +25,8 @@ class TaskyDetailViewController: DetailViewController,UITableViewDelegate, UITab
     @IBOutlet weak var save: UIButton!
     @IBOutlet weak var taskyStatus: UISegmentedControl!
     override func viewDidLoad() {
-        super.viewDidLoad()
+        super.viewDidLoad();
+        println(self.dataContext);
         super.saveButton = self.save;
         self.onMessage(self.detailViewCompleteKey, callback: { (result) -> Void in
             var crud:TaskyComments = result as TaskyComments;
@@ -63,22 +64,26 @@ class TaskyDetailViewController: DetailViewController,UITableViewDelegate, UITab
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        println(self.comments.count);
-        return self.comments.count;
+        return self.taskyModel.comments.count;
     }
     
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-          var cell = self.taskyComments.dequeueReusableCellWithIdentifier("taskyComments") as TaskyCommentTableViewCell;
-        var comment = self.comments[indexPath.row];
+        var cell = self.taskyComments.dequeueReusableCellWithIdentifier("taskyComments") as TaskyCommentTableViewCell;
+        var comment = self.taskyModel.comments[indexPath.row];
         cell.setComments(comment.comment!);
-        println(cell);
         return cell;
     }
     
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat{
+        return 65;
+    }
+    
     func setCommentsDataCtx(comment: TaskyComments)->Void{
-        self.comments.append(comment);
+        self.taskyModel.comments.append(comment);
         self.taskyComments.reloadData();
+
     }
     
 }

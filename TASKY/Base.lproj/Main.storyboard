@@ -124,7 +124,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Implement Native App for Tasky" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wie-V7-SZE">
-                                <rect key="frame" x="6" y="132.5" width="584" height="20.5"/>
+                                <rect key="frame" x="6" y="132" width="584" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.098039217293262482" green="0.098039217293262482" blue="0.098039217293262482" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -182,11 +182,8 @@
                                 </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="nn3-yj-c7o">
-                                <rect key="frame" x="0.0" y="269" width="600" height="100"/>
+                                <rect key="frame" x="0.0" y="269" width="600" height="282"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="T4V-F3-yBe"/>
-                                </constraints>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="taskyComments" id="hFS-LN-5wt" customClass="TaskyCommentTableViewCell" customModule="TASKY" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
@@ -195,7 +192,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IxS-Xz-VQl">
-                                                    <rect key="frame" x="8" y="12.5" width="586" height="20.5"/>
+                                                    <rect key="frame" x="8" y="12" width="586" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
@@ -235,6 +232,7 @@
                         <constraints>
                             <constraint firstItem="gdX-3B-7DP" firstAttribute="top" secondItem="PXL-tO-Zed" secondAttribute="bottom" constant="8" id="0Q6-R2-JAU"/>
                             <constraint firstAttribute="trailing" secondItem="Lrs-uU-gZi" secondAttribute="trailing" id="2aQ-w9-B0H"/>
+                            <constraint firstItem="mw7-7H-IgO" firstAttribute="top" secondItem="nn3-yj-c7o" secondAttribute="bottom" constant="20" id="2gF-MG-btv"/>
                             <constraint firstItem="PXL-tO-Zed" firstAttribute="leading" secondItem="9c6-cI-YkC" secondAttribute="leading" constant="6" id="2w4-WP-xix"/>
                             <constraint firstItem="qMn-3J-YXs" firstAttribute="top" secondItem="Xib-iy-XM2" secondAttribute="top" constant="-2" id="5Ej-4i-HU7"/>
                             <constraint firstItem="Lrs-uU-gZi" firstAttribute="leading" secondItem="9c6-cI-YkC" secondAttribute="leading" id="6J6-U6-pJO"/>

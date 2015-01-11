@@ -13,6 +13,14 @@ public class TaskyModel : CRUDBaseModel {
     var taskyID: Int?;
     var taskyTitle: NSString?;
     var taskyDescription: NSString?;
+    var comments: [TaskyComments]=[TaskyComments](){
+        willSet(newData){
+            
+        }
+        didSet{
+            observeChange("comments",oldData:oldValue,newData:comments);
+        }
+    };
     
     var taskyStatus: Int?{
         willSet(newData){
