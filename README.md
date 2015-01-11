@@ -1,3 +1,3 @@
 ### ScreenShot
 
-![Tasky](./Tasky.gif)
+![Tasky](./TASKY/Tasky.gif)
