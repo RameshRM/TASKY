@@ -51,5 +51,93 @@
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TASKY/FilteredListViewController.swift"
+            timestampString = "442727513.602489"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
+            landmarkName = "FilteredListViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TASKY.FilteredListViewController.filterSearch.setter : Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.UISearchBar&gt;"
+                  moduleName = "TASKY"
+                  urlString = "file:///Users/ramahadevan/github.com/Tasky/TASKY/FilteredListViewController.swift"
+                  timestampString = "442727513.87947"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "27">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TASKY.FilteredListViewController.filterSearch.materializeForSet : Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.UISearchBar&gt;"
+                  moduleName = "TASKY"
+                  urlString = "file:///Users/ramahadevan/github.com/Tasky/TASKY/FilteredListViewController.swift"
+                  timestampString = "442727513.879594"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "25">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TASKY.FilteredListViewController.init (TASKY.FilteredListViewController.Type)(nibName : Swift.Optional&lt;Swift.String&gt;, bundle : Swift.Optional&lt;ObjectiveC.NSBundle&gt;) -&gt; TASKY.FilteredListViewController"
+                  moduleName = "TASKY"
+                  urlString = "file:///Users/ramahadevan/github.com/Tasky/TASKY/FilteredListViewController.swift"
+                  timestampString = "442727513.879743"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "66">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TASKY.FilteredListViewController.init (TASKY.FilteredListViewController.Type)() -&gt; TASKY.FilteredListViewController"
+                  moduleName = "TASKY"
+                  urlString = "file:///Users/ramahadevan/github.com/Tasky/TASKY/FilteredListViewController.swift"
+                  timestampString = "442727513.879867"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TASKY.FilteredListViewController.init (TASKY.FilteredListViewController.Type)(coder : ObjectiveC.NSCoder) -&gt; TASKY.FilteredListViewController"
+                  moduleName = "TASKY"
+                  urlString = "file:///Users/ramahadevan/github.com/Tasky/TASKY/FilteredListViewController.swift"
+                  timestampString = "442727513.879989"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "35">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

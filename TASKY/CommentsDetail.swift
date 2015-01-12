@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CommentsDetail: ModalDetailViewController {
+class CommentsDetail: ModalDetailViewController, UITextFieldDelegate {
 
     @IBOutlet weak var save: UIBarButtonItem!
     var taskyComment = TaskyComments();
@@ -16,6 +16,7 @@ class CommentsDetail: ModalDetailViewController {
     @IBOutlet weak var comments: UITextField!
 
     override func viewDidLoad() {
+        comments.delegate = self;
         super.saveBarButton = self.save;
         self.dataContext = taskyComment;
         super.viewDidLoad()
@@ -26,6 +27,10 @@ class CommentsDetail: ModalDetailViewController {
         taskyComment.comment = (sender as UITextField).text
     }
 
+    func textFieldShouldReturn(textField: UITextField) -> Bool{
+        textField.resignFirstResponder();
+        return true;
+    }
     
     override func onDataContextSet() {
         super.onDataContextSet();

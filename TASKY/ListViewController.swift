@@ -65,7 +65,18 @@ class ListViewController: MainViewController,UITableViewDelegate, UITableViewDat
     
     func onCellForRowIndexSet(tableCell: UITableViewCell, rowData: AnyObject,
         indexPath: NSIndexPath, canUserInteract: Bool) -> Void{
+    }
+    
+    func disableUserInteractionForTable(){
+        self.tableView.scrollEnabled=false;
+        self.tableView.userInteractionEnabled = false;
         
+    }
+    
+    
+    func enableUserInteractionForTable(){
+        self.tableView.scrollEnabled=true;
+        self.tableView.userInteractionEnabled = true;
         
     }
     

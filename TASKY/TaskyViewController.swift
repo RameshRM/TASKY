@@ -50,13 +50,6 @@ class TaskyViewController: ListViewController, UISearchBarDelegate, UISearchDisp
         return 65;
     }
     
-    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
-        searchBar.resignFirstResponder();
-        var result = TaskyModel.mockTasks(searchBar.text);
-        self.dataContext = result;
-        self.tableView.reloadData();
-    }
-    
     override func onCellForRowIndexSet(tableCell: UITableViewCell, rowData: AnyObject, indexPath: NSIndexPath, canUserInteract: Bool) -> Void{
         var cell = tableCell as TaskyItemTableViewCell;
         var taskyModel = rowData as TaskyModel;
@@ -88,7 +81,12 @@ class TaskyViewController: ListViewController, UISearchBarDelegate, UISearchDisp
         self.navigationController?.setNavigationBarHidden(false, animated: true);
     }
     
-    func onTapped(){
+    
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        searchBar.resignFirstResponder();
+        var result = TaskyModel.mockTasks(searchBar.text);
+        self.dataContext = result;
+        self.tableView.reloadData();
     }
     
     func searchBarTextDidBeginEditing(searchBar: UISearchBar){

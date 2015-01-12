@@ -12,6 +12,8 @@
 		90A197F81A5F8908005753AF /* ChangeObserverProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A197F71A5F8908005753AF /* ChangeObserverProtocol.swift */; };
 		90A197FF1A5F8FB6005753AF /* CRUDBaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A197FE1A5F8FB6005753AF /* CRUDBaseModel.swift */; };
 		90A198011A624846005753AF /* TaskyCommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A198001A624846005753AF /* TaskyCommentTableViewCell.swift */; };
+		90A1980B1A63772F005753AF /* SearchBarProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A1980A1A63772E005753AF /* SearchBarProtocol.swift */; };
+		90A1980D1A637860005753AF /* FilteredListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A1980C1A63785F005753AF /* FilteredListViewController.swift */; };
 		90BBBE1D1A4A403100C7B877 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BBBE1C1A4A403100C7B877 /* AppDelegate.swift */; };
 		90BBBE201A4A403100C7B877 /* TASKY.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 90BBBE1E1A4A403100C7B877 /* TASKY.xcdatamodeld */; };
 		90BBBE221A4A403100C7B877 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90BBBE211A4A403100C7B877 /* ViewController.swift */; };
@@ -58,6 +60,8 @@
 		90A197F71A5F8908005753AF /* ChangeObserverProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangeObserverProtocol.swift; sourceTree = "<group>"; };
 		90A197FE1A5F8FB6005753AF /* CRUDBaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CRUDBaseModel.swift; sourceTree = "<group>"; };
 		90A198001A624846005753AF /* TaskyCommentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskyCommentTableViewCell.swift; sourceTree = "<group>"; };
+		90A1980A1A63772E005753AF /* SearchBarProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchBarProtocol.swift; sourceTree = "<group>"; };
+		90A1980C1A63785F005753AF /* FilteredListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilteredListViewController.swift; sourceTree = "<group>"; };
 		90BBBE171A4A403100C7B877 /* TASKY.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TASKY.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90BBBE1B1A4A403100C7B877 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		90BBBE1C1A4A403100C7B877 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -116,6 +120,7 @@
 				90CDF9641A574A7C00826428 /* ListViewProtocol.swift */,
 				90BBBE691A51315500C7B877 /* DetailViewProtocol.swift */,
 				90A197F71A5F8908005753AF /* ChangeObserverProtocol.swift */,
+				90A1980A1A63772E005753AF /* SearchBarProtocol.swift */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -225,6 +230,7 @@
 				9055C1D31A538E11003613EC /* CommentsDetail.swift */,
 				9055C1D51A539141003613EC /* ModalDetailViewController.swift */,
 				90CDF9621A5749D200826428 /* ListViewController.swift */,
+				90A1980C1A63785F005753AF /* FilteredListViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -363,12 +369,14 @@
 				90BBBE6A1A51315500C7B877 /* DetailViewProtocol.swift in Sources */,
 				90CDF9631A5749D200826428 /* ListViewController.swift in Sources */,
 				90BBBE621A4B29E600C7B877 /* TaskyTimeLineViewCell.swift in Sources */,
+				90A1980D1A637860005753AF /* FilteredListViewController.swift in Sources */,
 				90BBBE681A512EB300C7B877 /* DetailViewController.swift in Sources */,
 				90BBBE4B1A4A440200C7B877 /* DataContext.swift in Sources */,
 				90BBBE221A4A403100C7B877 /* ViewController.swift in Sources */,
 				90BBBE551A4A7A4000C7B877 /* TaskyComments.swift in Sources */,
 				90A197F81A5F8908005753AF /* ChangeObserverProtocol.swift in Sources */,
 				90BBBE491A4A43C900C7B877 /* DataConstants.swift in Sources */,
+				90A1980B1A63772F005753AF /* SearchBarProtocol.swift in Sources */,
 				90BBBE201A4A403100C7B877 /* TASKY.xcdatamodeld in Sources */,
 				90BBBE1D1A4A403100C7B877 /* AppDelegate.swift in Sources */,
 				90BBBE531A4A5BB500C7B877 /* TaskyModelLog.swift in Sources */,

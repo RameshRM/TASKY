@@ -49,7 +49,5 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>UILaunchImageFile</key>
-	<string>df0_5285.jpg</string>
 </dict>
 </plist>
