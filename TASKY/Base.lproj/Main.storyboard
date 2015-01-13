@@ -6,7 +6,7 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--TASKIES-->
+        <!--All Tasks-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="TaskyViewController" customModule="TASKY" customModuleProvider="target" sceneMemberID="viewController">
@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="0bD-Uf-Chc">
-                                <rect key="frame" x="0.0" y="28" width="600" height="572"/>
+                                <rect key="frame" x="0.0" y="48" width="600" height="552"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="taskyItem" rowHeight="65" id="JBP-nh-9lS" customClass="TaskyItemTableViewCell" customModule="TASKY" customModuleProvider="target">
@@ -28,10 +28,10 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JBP-nh-9lS" id="blp-j6-zMr">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="adfafafa adfafafd234 sd fsfafa" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AxP-8v-eN9">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="adfafafa adfafafd234 sd fsfafa" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AxP-8v-eN9">
                                                     <rect key="frame" x="5" y="22" width="217.5" height="19.5"/>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                    <color key="textColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZpQ-Qj-Bkt">
@@ -86,13 +86,19 @@
                             <constraint firstAttribute="trailing" secondItem="J5D-cf-Smm" secondAttribute="trailing" id="1d9-b1-7mv"/>
                             <constraint firstItem="0bD-Uf-Chc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="D1j-S1-cmt"/>
                             <constraint firstItem="J5D-cf-Smm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Uym-2A-ySy"/>
-                            <constraint firstItem="0bD-Uf-Chc" firstAttribute="top" secondItem="J5D-cf-Smm" secondAttribute="bottom" constant="-80" id="VWr-qX-bi6"/>
+                            <constraint firstItem="0bD-Uf-Chc" firstAttribute="top" secondItem="J5D-cf-Smm" secondAttribute="bottom" constant="-60" id="VWr-qX-bi6"/>
                             <constraint firstAttribute="trailing" secondItem="0bD-Uf-Chc" secondAttribute="trailing" id="a0u-ek-4pw"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="0bD-Uf-Chc" secondAttribute="bottom" id="hnK-I6-XH5"/>
                             <constraint firstItem="J5D-cf-Smm" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="smV-cR-dpc"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="TASKIES" id="Trk-cV-cWR"/>
+                    <navigationItem key="navigationItem" title="All Tasks" id="Trk-cV-cWR">
+                        <barButtonItem key="leftBarButtonItem" systemItem="refresh" id="gjy-0j-xKQ">
+                            <connections>
+                                <action selector="onRefresh:" destination="BYZ-38-t0r" id="baq-CR-i4p"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="filterSearch" destination="J5D-cf-Smm" id="jGk-sM-pFe"/>

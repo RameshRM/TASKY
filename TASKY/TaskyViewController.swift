@@ -10,6 +10,9 @@ import UIKit
 
 class TaskyViewController: ListViewController, UISearchBarDelegate, UISearchDisplayDelegate   {
     
+    @IBAction func onRefresh(sender: AnyObject) {
+        self.refreshList();
+    }
     @IBOutlet weak var filterSearch: UISearchBar!
     @IBOutlet weak var taskyList: UITableView!
     
@@ -30,7 +33,7 @@ class TaskyViewController: ListViewController, UISearchBarDelegate, UISearchDisp
         super.viewWillDisappear(animated);
     }
     
-
+    
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated);
     }
@@ -45,17 +48,19 @@ class TaskyViewController: ListViewController, UISearchBarDelegate, UISearchDisp
         }
     }
     
-    
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat{
         return 65;
     }
     
+    
     override func onCellForRowIndexSet(tableCell: UITableViewCell, rowData: AnyObject, indexPath: NSIndexPath, canUserInteract: Bool) -> Void{
+        
         var cell = tableCell as TaskyItemTableViewCell;
         var taskyModel = rowData as TaskyModel;
+        
         cell.taskyItemStatus.text  = "Yesterday";
         if(indexPath.row == 2){
-        cell.taskyItemStatus.text  = "Today";
+            cell.taskyItemStatus.text  = "Today";
         }
         if(indexPath.row == 3){
             cell.taskyItemStatus.text  = "2 Days";
@@ -64,9 +69,9 @@ class TaskyViewController: ListViewController, UISearchBarDelegate, UISearchDisp
             cell.taskyItemStatus.text  = "39 Days";
             cell.taskyItemStatus.textColor = UIColor(red: 0.5, green: 0.2, blue: 0.2, alpha: 1.0);
         }
-        
         cell.taskyPriority.text = TaskyPriorities.priorityName(taskyModel.taskyPriority!);
         cell.dataBind(taskyModel, isEnabled: canUserInteract);
+        cell.taskyItemTitle.textColor = UIColor.blackColor();
     }
     
     func searchBarCancelButtonClicked(searchBar: UISearchBar){
@@ -75,7 +80,7 @@ class TaskyViewController: ListViewController, UISearchBarDelegate, UISearchDisp
         var result = TaskyModel.mockTasks();
         self.dataContext = result;
         self.taskyList.scrollEnabled=true;
-                self.taskyList.userInteractionEnabled = true;
+        self.taskyList.userInteractionEnabled = true;
         isSearchOn = false;
         self.tableView.reloadData();
         self.navigationController?.setNavigationBarHidden(false, animated: true);
@@ -87,6 +92,10 @@ class TaskyViewController: ListViewController, UISearchBarDelegate, UISearchDisp
         var result = TaskyModel.mockTasks(searchBar.text);
         self.dataContext = result;
         self.tableView.reloadData();
+        self.navigationController?.setNavigationBarHidden(false, animated: true);
+        self.taskyList.scrollEnabled=true;
+        self.taskyList.userInteractionEnabled = true;
+        
     }
     
     func searchBarTextDidBeginEditing(searchBar: UISearchBar){

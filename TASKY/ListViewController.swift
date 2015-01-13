@@ -80,4 +80,7 @@ class ListViewController: MainViewController,UITableViewDelegate, UITableViewDat
         
     }
     
+    func refreshList() -> Void{
+        self.tableView.reloadData();
+    }
 }

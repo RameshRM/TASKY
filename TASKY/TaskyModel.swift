@@ -60,7 +60,15 @@ public class TaskyModel : CRUDBaseModel {
         tasky =  TaskyModel(title: "Start Some Random Task", description: "Implement Native App for Tasky", status: TaskyStatusCodes.Active);
         tasky.timeLine = timeLine;
         tasks.append(tasky);
-        
+
+        tasky =  TaskyModel(title: "Start Some Random Task", description: "Implement Native App for Tasky", status: TaskyStatusCodes.Active);
+        tasky.timeLine = timeLine;
+        tasks.append(tasky);
+
+        tasky =  TaskyModel(title: "Start Some Random Task", description: "Implement Native App for Tasky", status: TaskyStatusCodes.Active);
+        tasky.timeLine = timeLine;
+        tasks.append(tasky);
+
         tasky =  TaskyModel(title: "Start Some Task", description: "Implement Native App for Tasky", status: TaskyStatusCodes.Active);
         tasky.timeLine = timeLine;
         tasks.append(tasky);
@@ -92,12 +100,11 @@ public class TaskyModel : CRUDBaseModel {
         tasky =  TaskyModel(title: "Start Some Task", description: "Implement Native App for Tasky", status: TaskyStatusCodes.Active);
         tasky.timeLine = timeLine;
         tasks.append(tasky);
-        
         return tasks;
     }
     
     class func mockTasks(searchBy: NSString) -> [AnyObject]{
-        var filter = NSPredicate(format: " (self.taskyTitle contains[c] %@) OR (self.taskyDescription contains[c] %@)", searchBy, searchBy);
+        var filter = NSPredicate(format: "(self.taskyTitle contains[c] %@)", searchBy);
         println(filter);
         var mocks = self.mockTasks();
         var mutable = NSMutableArray(array: mocks);
