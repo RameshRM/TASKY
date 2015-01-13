@@ -34,6 +34,7 @@ class ListViewController: MainViewController,UITableViewDelegate, UITableViewDat
     }
     
     override func viewDidLoad() {
+        addRefresh();
         super.viewDidLoad();
     }
     
@@ -82,5 +83,12 @@ class ListViewController: MainViewController,UITableViewDelegate, UITableViewDat
     
     func refreshList() -> Void{
         self.tableView.reloadData();
+    }
+    
+    private func addRefresh()->Void{
+        
+        var refreshButton: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Refresh, target: nil, action: Selector("onRefresh"));
+        self.navigationItem.setLeftBarButtonItem(refreshButton, animated: true);
+        
     }
 }

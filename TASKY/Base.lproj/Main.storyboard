@@ -28,8 +28,8 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JBP-nh-9lS" id="blp-j6-zMr">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="adfafafa adfafafd234 sd fsfafa" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AxP-8v-eN9">
-                                                    <rect key="frame" x="5" y="22" width="217.5" height="19.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="adfafafa adfafafd234 sd fsfafa" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AxP-8v-eN9">
+                                                    <rect key="frame" x="5" y="22" width="222.5" height="19.5"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -92,13 +92,7 @@
                             <constraint firstItem="J5D-cf-Smm" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="smV-cR-dpc"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="All Tasks" id="Trk-cV-cWR">
-                        <barButtonItem key="leftBarButtonItem" systemItem="refresh" id="gjy-0j-xKQ">
-                            <connections>
-                                <action selector="onRefresh:" destination="BYZ-38-t0r" id="baq-CR-i4p"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="All Tasks" id="Trk-cV-cWR"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="filterSearch" destination="J5D-cf-Smm" id="jGk-sM-pFe"/>

@@ -13,10 +13,11 @@ class TaskyViewController: ListViewController, UISearchBarDelegate, UISearchDisp
     @IBAction func onRefresh(sender: AnyObject) {
         self.refreshList();
     }
+    
     @IBOutlet weak var filterSearch: UISearchBar!
     @IBOutlet weak var taskyList: UITableView!
     
-    var taskies:[TaskyModel] = TaskyModel.mockTasks();
+    var taskies:[TaskyModel] = TaskyModel.activeTasks();
     var selectedTasky:TaskyModel?;
     
     

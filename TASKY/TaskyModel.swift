@@ -9,7 +9,7 @@
 import Foundation
 
 public class TaskyModel : CRUDBaseModel {
-    
+    var uniqueId:NSInteger = 3;
     var taskyID: Int?;
     var taskyTitle: NSString?;
     var taskyDescription: NSString?;
@@ -22,11 +22,11 @@ public class TaskyModel : CRUDBaseModel {
         }
     };
     
-    var taskyStatus: Int?{
+    var taskyStatus: Int  {
         willSet(newData){
         }
         didSet{
-            observeChange("taskyStatus",oldData:oldValue!,newData:taskyStatus!);
+            observeChange("taskyStatus",oldData:oldValue,newData:taskyStatus);
         }
     };
 
@@ -100,15 +100,23 @@ public class TaskyModel : CRUDBaseModel {
         tasky =  TaskyModel(title: "Start Some Task", description: "Implement Native App for Tasky", status: TaskyStatusCodes.Active);
         tasky.timeLine = timeLine;
         tasks.append(tasky);
+        
         return tasks;
     }
     
     class func mockTasks(searchBy: NSString) -> [AnyObject]{
         var filter = NSPredicate(format: "(self.taskyTitle contains[c] %@)", searchBy);
-        println(filter);
         var mocks = self.mockTasks();
         var mutable = NSMutableArray(array: mocks);
         return mutable.filteredArrayUsingPredicate(filter!);
     }
     
+    
+    class func activeTasks()-> [TaskyModel]{
+        var tasks = self.mockTasks();
+        var taskList = NSMutableArray(array: tasks);
+        var filter = NSPredicate(format: "(self.taskyStatus == %d)",TaskyStatusCodes.Active);
+        var result = taskList.filteredArrayUsingPredicate(filter!);
+        return result as [TaskyModel];
+    }
 }
