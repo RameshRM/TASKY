@@ -26,10 +26,11 @@ class MainViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
- 
+    
     func closeChildView(child: DetailViewController){
         child.navigationController?.popViewControllerAnimated(true);
     }
+    
     
     /*
     // MARK: - Navigation

@@ -40,9 +40,13 @@ class DetailViewController: MainViewController, DetailViewProtocol {
             onDataContextSet();
         };
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "subscribe:", name: detailViewCompleteKey, object: nil)
-        
     }
     
+    deinit{
+        NSNotificationCenter.defaultCenter().removeObserver(self);
+    }
+    
+
     @IBAction func onSave(sender: AnyObject) {
         self.closeChildView(self);
     }

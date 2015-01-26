@@ -10,6 +10,7 @@ import UIKit
 
 class TaskyDetailViewController: DetailViewController,UITableViewDelegate, UITableViewDataSource {
     
+    @IBOutlet weak var noResultsLabel: UILabel!
     
     @IBOutlet weak var taskyComments: UITableView!
     @IBOutlet weak var taskyTitle: UILabel!
@@ -31,8 +32,13 @@ class TaskyDetailViewController: DetailViewController,UITableViewDelegate, UITab
             var crud:TaskyComments = result as TaskyComments;
             self.setCommentsDataCtx(crud);
         });
+        self.setCommentsDataCtx();
         self.taskyComments.delegate = self;
         self.taskyComments.dataSource = self;
+        showTableWhenData();
+        var tapGesture:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: Selector("onTapped"));
+        self.view.addGestureRecognizer(tapGesture);
+   
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -69,8 +75,10 @@ class TaskyDetailViewController: DetailViewController,UITableViewDelegate, UITab
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = self.taskyComments.dequeueReusableCellWithIdentifier("taskyComments") as TaskyCommentTableViewCell;
-        var comment = reversedComments[indexPath.row];
-        cell.setComments(comment.comment!);
+        if(reversedComments.count>0){
+            var comment = reversedComments[indexPath.row];
+            cell.setComments(comment.comment!);
+        }
         return cell;
     }
     
@@ -83,8 +91,35 @@ class TaskyDetailViewController: DetailViewController,UITableViewDelegate, UITab
         self.taskyModel.comments.append(comment);
         reversedComments = self.taskyModel.comments.reverse();
         let indexPath = NSIndexPath(forRow: reversedComments.count-1, inSection: 0);
+        
+        showTableWhenData();
         self.taskyComments.reloadData();
         self.taskyComments.reloadRowsAtIndexPaths(	[indexPath], withRowAnimation: .Automatic);
+    }
+    
+    func setCommentsDataCtx()->Void{
+        reversedComments = self.taskyModel.comments.reverse();
+        let indexPath = NSIndexPath(forRow: reversedComments.count-1, inSection: 0);
+        showTableWhenData();
+        self.taskyComments.reloadData();
+//        self.taskyComments.reloadRowsAtIndexPaths(	[indexPath], withRowAnimation: .Automatic);
+    }
+    
+    private func showTableWhenData()->Void{
+        if(self.taskyModel.comments.count == 0){
+            self.taskyComments.hidden=true;
+            self.noResultsLabel.hidden = false;
+        }else{
+            self.taskyComments.hidden=false;
+                        self.noResultsLabel.hidden = true;
+        }
+        self.noResultsLabel.hidden = true;
+            self.taskyComments.hidden=true;
+    }
+    
+    
+    @objc func onTapped(){
+        view.endEditing(true);
     }
     
 }

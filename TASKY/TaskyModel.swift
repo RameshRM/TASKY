@@ -29,7 +29,7 @@ public class TaskyModel : CRUDBaseModel {
             observeChange("taskyStatus",oldData:oldValue,newData:taskyStatus);
         }
     };
-
+    
     var timeLine: TimeLineModel?;
     var belongsTo: TaskyUser?;
     var taskyPriority : Int?;
@@ -42,7 +42,7 @@ public class TaskyModel : CRUDBaseModel {
         super.init();
     }
     
-
+    
     
     class func mockTasks()->[TaskyModel]{
         var tasks:[TaskyModel] = [];
@@ -52,23 +52,33 @@ public class TaskyModel : CRUDBaseModel {
         var endDt = format.dateFromString("1/6/2015");
         
         var timeLine:TimeLineModel = TimeLineModel(title: "Important Tasks", description: "Some Description", start: startDt!);
+        var comment:TaskyComments = TaskyComments();
+        comment.comment = "Hello World";
+        
         
         var tasky: TaskyModel = TaskyModel(title: "Start Some Task", description: "Implement Native App for Tasky", status: TaskyStatusCodes.Active);
         tasky.timeLine = timeLine;
+        tasky.comments.append(comment);
+        tasky.comments.append(comment);
+        tasky.comments.append(comment);
+        tasky.comments.append(comment);
+        tasky.comments.append(comment);
+        tasky.comments.append(comment);
+        
         tasks.append(tasky);
         
         tasky =  TaskyModel(title: "Start Some Random Task", description: "Implement Native App for Tasky", status: TaskyStatusCodes.Active);
         tasky.timeLine = timeLine;
         tasks.append(tasky);
-
+        
         tasky =  TaskyModel(title: "Start Some Random Task", description: "Implement Native App for Tasky", status: TaskyStatusCodes.Active);
         tasky.timeLine = timeLine;
         tasks.append(tasky);
-
+        
         tasky =  TaskyModel(title: "Start Some Random Task", description: "Implement Native App for Tasky", status: TaskyStatusCodes.Active);
         tasky.timeLine = timeLine;
         tasks.append(tasky);
-
+        
         tasky =  TaskyModel(title: "Start Some Task", description: "Implement Native App for Tasky", status: TaskyStatusCodes.Active);
         tasky.timeLine = timeLine;
         tasks.append(tasky);

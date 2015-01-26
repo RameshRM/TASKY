@@ -19,6 +19,7 @@ class ListViewController: MainViewController,UITableViewDelegate, UITableViewDat
             
         }
     };
+    var isEditing = false;
     
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -35,6 +36,7 @@ class ListViewController: MainViewController,UITableViewDelegate, UITableViewDat
     
     override func viewDidLoad() {
         addRefresh();
+        addEdit();
         super.viewDidLoad();
     }
     
@@ -82,13 +84,27 @@ class ListViewController: MainViewController,UITableViewDelegate, UITableViewDat
     }
     
     func refreshList() -> Void{
+        println("Refreshing...");
         self.tableView.reloadData();
     }
     
     private func addRefresh()->Void{
-        
-        var refreshButton: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Refresh, target: nil, action: Selector("onRefresh"));
+        var refreshButton: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Refresh, target: self, action: Selector("onRefresh"));
         self.navigationItem.setLeftBarButtonItem(refreshButton, animated: true);
         
+    }
+    
+    private func addEdit()->Void{
+        var refreshButton: UIBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Edit, target: self, action: Selector("onEdit"));
+        self.navigationItem.setRightBarButtonItem(refreshButton, animated: true);
+    }
+    
+    private func addToolbar(barButtonStyle: UIBarButtonItemStyle, position: NSString){
+        
+    }
+    
+    @objc func onEdit(){
+        self.tableView.setEditing(!isEditing, animated: true);
+        isEditing = !isEditing;
     }
 }

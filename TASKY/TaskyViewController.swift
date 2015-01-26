@@ -11,6 +11,7 @@ import UIKit
 class TaskyViewController: ListViewController, UISearchBarDelegate, UISearchDisplayDelegate   {
     
     @IBAction func onRefresh(sender: AnyObject) {
+
         self.refreshList();
     }
     
@@ -27,6 +28,7 @@ class TaskyViewController: ListViewController, UISearchBarDelegate, UISearchDisp
         self.prepareTableView("taskyItem");
         self.dataContext = taskies;
         filterSearch.delegate=self;
+
     }
     
     
@@ -111,4 +113,5 @@ class TaskyViewController: ListViewController, UISearchBarDelegate, UISearchDisp
     func searchBarTextDidEndEditing(searchBar: UISearchBar){
         searchBar.setShowsCancelButton(false, animated: true);
     }
+ 
 }
